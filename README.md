@@ -1,4 +1,11 @@
-# RouteMining
+## RouteMining
+
+1. run npm install to build dependencies.
+2. run npm serve to start server in development mode.
+
+See build heading in Build heading.
+
+# The build files have to be served from a static servers default entry point.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.4.
 
