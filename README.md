@@ -1,5 +1,10 @@
 ## RouteMining
+This uses Google Maps Api
+You must add your API key
+1. Open index.html in src folder
+2. place your key in place of 'ADDYOURKEYHERE' in script tag in the head
 
+To run the project
 1. run npm install to build dependencies.
 2. run npm serve to start server in development mode.
 
