@@ -13,4 +13,23 @@
 <div #map style="height: 300px;">
 </div>
 
+<table *ngIf="route" class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Origin</th>
+      <th scope="col">Destination</th>
+      <th scope="col">Distance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of route.legs">
+      <th scope="row">{{route.legs.indexOf(item)+1}}</th>
+      <td>{{item.start_address}}</td>
+      <td>{{item.end_address}}</td>
+      <td>{{item.distance.value/1000}}km</td>
+    </tr>
+  </tbody>
+</table>
+
 <a class="btn btn-primary" [routerLink]="[ '/']">Go back</a>
