@@ -8,21 +8,25 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-md-6 col-sm-12">
+  <div class="col-md-4 col-sm-12">
     <div class="form-group">
       <label for="destination1">Destination 1</label>
-      <input #dest1 type="text" class="form-control" id="destination1" placeholder="Source Address">
+      <input #dest1 type="text" class="form-control" id="destination1" placeholder="Address">
     </div>
+  </div>
+  <div class="col-md-4 col-sm-12">
     <div class="form-group">
       <label for="destination2">Destination 2</label>
-      <input #dest2 type="text" class="form-control" id="destination2" placeholder="Source Address">
+      <input #dest2 type="text" class="form-control" id="destination2" placeholder="Address">
     </div>
+  </div>
+  <div class="col-md-4 col-sm-12">
     <div class="form-group">
       <label for="destination3">Destination 3</label>
-      <input #dest3 type="text" class="form-control" id="destination3" placeholder="Source Address">
+      <input #dest3 type="text" class="form-control" id="destination3" placeholder="Address">
     </div>
   </div>
 </div>
-<div class="row d-flex justify-content-center">
-  <a class="btn-lg btn-dark" [routerLink]="[ '/results']">Process</a>
+<div class="row d-flex justify-content-center" style="margin-top: 10px;">
+  <a class="btn-lg btn-dark" style="color: white;" [routerLink]="[ '/results']">Process</a>
 </div>

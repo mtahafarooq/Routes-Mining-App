@@ -9,12 +9,16 @@ import { Waypoints } from '../data.model';
 })
 export class ResultsComponent implements OnInit {
   @ViewChild('map') map: ElementRef;
+  route: any;
   data: Waypoints;
   constructor(private dataService: DataServiceService) {
     this.data = dataService.getData();
   }
 
   ngOnInit() {
+    if (this.dataService.getData().source === '') {
+      return;
+    }
     const directionService = new google.maps.DirectionsService();
     const directionDisplay = new google.maps.DirectionsRenderer();
 
@@ -35,12 +39,12 @@ export class ResultsComponent implements OnInit {
       origin: this.data.source,
       destination: this.data.dest3,
       waypoints: wayPoints,
-      optimizeWaypoints: true,
       travelMode: google.maps.TravelMode.DRIVING
     }, (res, status) => {
       if (status === google.maps.DirectionsStatus.OK) {
         directionDisplay.setDirections(res);
-        const route = res.routes[0];
+        this.route = res.routes[0];
+        console.log(this.route);
       } else {
         window.alert('Direction request failed: ' + status);
       }

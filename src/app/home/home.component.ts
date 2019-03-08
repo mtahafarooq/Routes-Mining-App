@@ -18,23 +18,19 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     const srcAutoComplete = new google.maps.places.Autocomplete(this.sourceELement.nativeElement);
     google.maps.event.addListener(srcAutoComplete, 'place_changed', () => {
-      console.log(srcAutoComplete.getPlace().formatted_address);
       this.dataService.setSource(srcAutoComplete.getPlace().formatted_address);
     });
 
     const dest1AutoComplete = new google.maps.places.Autocomplete(this.dest1ELement.nativeElement);
     google.maps.event.addListener(dest1AutoComplete, 'place_changed', () => {
-      console.log(dest1AutoComplete.getPlace().formatted_address);
       this.dataService.setdest1(dest1AutoComplete.getPlace().formatted_address);
     });
     const dest2AutoComplete = new google.maps.places.Autocomplete(this.dest2ELement.nativeElement);
     google.maps.event.addListener(dest2AutoComplete, 'place_changed', () => {
-      console.log(dest2AutoComplete.getPlace().formatted_address);
       this.dataService.setdest2(dest2AutoComplete.getPlace().formatted_address);
     });
     const dest3AutoComplete = new google.maps.places.Autocomplete(this.dest3ELement.nativeElement);
     google.maps.event.addListener(dest3AutoComplete, 'place_changed', () => {
-      console.log(dest3AutoComplete.getPlace().formatted_address);
       this.dataService.setdest3(dest3AutoComplete.getPlace().formatted_address);
     });
   }

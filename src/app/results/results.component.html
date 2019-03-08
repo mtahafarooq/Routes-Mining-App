@@ -1,3 +1,16 @@
+<div *ngIf="route" class="navbar navbar-dark bg-dark" style="color: white;">
+  <span class="navbar-brand">Route: {{route.summary}}</span>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#details" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <ul class="collapse navbar-nav" id="details">
+    <li class="nav-item"></li>
+    <li class="nav-item"></li>
+    <li class="nav-item"></li>
+    <li class="nav-item"></li>
+  </ul>
+</div>
 <div #map style="height: 300px;">
 </div>
 
