@@ -1,0 +1,25 @@
+<p-table
+#dt 
+[value]="routesList"
+[columns]="cols"
+>
+<ng-template pTemplate="caption">
+    <div class="ui-helper-clearfix">
+        <p-button label="Export Data" (click)="dt.exportCSV()" style="float:left"></p-button>
+    </div>
+</ng-template>
+<ng-template pTemplate="header" let-columns>
+  <tr>
+    <th *ngFor="let col of columns">
+      {{col.header}}
+    </th>
+  </tr>
+</ng-template>
+<ng-template pTemplate="body" let-rowData let-route let-rowIndex="rowIndex"  let-columns="columns">
+  <tr>
+    <td *ngFor="let col of columns">
+        {{rowData[col.field]}}
+    </td>
+  </tr>
+</ng-template>
+</p-table>

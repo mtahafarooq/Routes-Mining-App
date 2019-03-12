@@ -11,6 +11,8 @@ export class DataServiceService {
     dest2: '',
     dest3: ''
   };
+  private routesList:Waypoints[] = [];
+
   constructor() { }
 
   setdest1(address: string) {
@@ -31,5 +33,11 @@ export class DataServiceService {
 
   getData(): Waypoints {
     return this.data;
+  }
+  storeRoute(route:any[]){
+    window.localStorage.setItem('route', JSON.stringify(route));
+  }
+  getAllroutes(){
+    return JSON.parse(window.localStorage.getItem('route'));
   }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Waypoints } from '../data.model';
 import { DataServiceService } from '../data-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,12 @@ export class HomeComponent implements OnInit {
   @ViewChild('dest2') dest2ELement: ElementRef;
   @ViewChild('dest3') dest3ELement: ElementRef;
 
-  constructor(private dataService: DataServiceService) { }
+  listRoutes:any[] = [];
+
+
+  constructor(
+    private dataService: DataServiceService,
+    private router: Router) { }
 
   ngOnInit() {
     const srcAutoComplete = new google.maps.places.Autocomplete(this.sourceELement.nativeElement);
@@ -34,5 +40,25 @@ export class HomeComponent implements OnInit {
       this.dataService.setdest3(dest3AutoComplete.getPlace().formatted_address);
     });
   }
-
+  process(){
+      let route ={
+      source: this.sourceELement.nativeElement.value,
+      dest1:  this.dest1ELement.nativeElement.value,
+      dest2:  this.dest2ELement.nativeElement.value,
+      dest3:  this.dest3ELement.nativeElement.value
+    }
+    let routes = this.dataService.getAllroutes();
+    routes.push(route);
+    this.dataService.storeRoute(routes);
+    this.router.navigate([
+      "/results"
+    ]);    
+  }
+  reports(){
+    this.router.navigate([
+      "/reports"
+    ]); 
+  }
 }
+
+

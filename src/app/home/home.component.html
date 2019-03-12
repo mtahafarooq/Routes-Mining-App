@@ -28,5 +28,8 @@
   </div>
 </div>
 <div class="row d-flex justify-content-center" style="margin-top: 10px;">
-  <a class="btn-lg btn-dark" style="color: white;" [routerLink]="[ '/results']">Process</a>
+  <a class="btn-lg btn-dark" style="color: white; cursor: pointer" (click)="process()" >Process</a>
+</div>
+<div class="row d-flex" style="margin-top: 10px;">
+  <a class="btn-lg btn-dark" style="color: white; cursor: pointer" (click)="reports()" >Reports</a>
 </div>
